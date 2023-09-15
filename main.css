@@ -406,6 +406,7 @@ main a {
     flex-direction: column;
     align-items: center;
     padding: 40px 0;
+    overflow: hidden;
   }
 
   #sec6 h2 {
