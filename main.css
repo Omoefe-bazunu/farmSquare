@@ -42,6 +42,7 @@ body{
     background-position: center;
     padding-bottom: 40px;
     margin-bottom: 40px;
+    overflow: hidden;
 }
 
 nav {
@@ -120,7 +121,7 @@ main a {
     margin-top: 20px;
     color: #ffff;
     background-color: #FFD700;
-    padding: 8px;
+    padding: 5px;
     text-align: center;
     width: 15vw;
     height: 5vh;
@@ -540,7 +541,7 @@ footer {
 
 .about {
     margin-right: 5%;
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 .info img {
@@ -548,3 +549,158 @@ footer {
     height: 50px;
 }
 
+/* Styles for responsiveness */
+
+
+@media(max-width: 1027px) {
+    nav ul {
+        display: flex;
+        margin-left: 15%;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+    }
+    
+    nav ul li {
+        margin-right: 20px;
+    }
+    
+
+    .logoBtn {
+        margin-left: 10%;
+        color: #ffff;
+        background-color: #FFD700;
+        padding: 8px;
+        text-align: center;
+        width: 70px;
+    }
+    
+    .info {
+        margin-right: 30%;
+    }
+    
+    #sec7  .benefitsLists div p {
+        text-align:left;
+    }
+
+    #sec2 div h2{
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+}
+
+
+@media (max-width: 925px) {
+    #sec2  img{
+        margin-left: 120px;
+        height: 100%;
+        width: 40vw;
+        margin-right: 5%;
+        border: 1px solid var(--themeColor2);
+    }
+
+    #sec2 div h2{
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    #sec4 {
+        padding: 50px 40px;
+    }
+    
+    #sec4 .servicesList {
+        align-self: center;
+        display: grid;
+        grid-template-columns: repeat(4, fr);
+        gap: 60px;
+
+    }
+
+    #sec5 {
+        padding: 30px 15px;
+    }
+
+}
+    
+ @media (max-width: 881px) {
+
+    #sec5 {
+        padding: 20px 5px;
+    }
+        
+    
+    #sec5 .featuredLists {
+        gap: 3px;
+    }
+    
+    .featuredLists div img {
+        width: 100px;
+        height: 100px;
+      }
+    
+    
+}
+
+@media (max-width: 869px) {
+
+    #sec5 .featuredLists {
+        row-gap: 50px;
+        grid-template-areas: 
+        "img1 img2" 
+        "img3 img4";
+
+    }
+
+    #sec4 .servicesList {
+        row-gap: 50px;
+        grid-template-areas: 
+        "img1 img2" 
+        "img3 img4";
+    }
+
+    #sec4 {
+        padding: 30px 40px;
+    }
+
+    #sec5 {
+        margin-bottom: 50px;
+
+    }
+    .featuredLists p {
+        word-wrap: break-word;
+        max-lines: 20px;
+
+      }
+    
+    
+}
+
+@media (max-width: 850px) {
+
+    .logoBtn {
+        margin-left: 5%;
+    }
+
+    #sec2 div h2{
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+    }
+
+    #sec4 {
+        padding: 50px 40px;
+    }
+    
+    #sec4 .servicesList {
+        align-self: center;
+        display: grid;
+        grid-template-columns: repeat(4, fr);
+        gap: 60px;
+
+    }
+
+    #sec5 {
+        padding: 30px 15px;
+    }
+
+}
