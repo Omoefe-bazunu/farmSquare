@@ -26,6 +26,7 @@ body{
 .wrapper {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 /* Section 1 styles */
@@ -42,7 +43,7 @@ body{
     background-position: center;
     padding-bottom: 40px;
     margin-bottom: 40px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 nav {
@@ -55,6 +56,7 @@ nav {
     top: 0;
     background-color: hidden;
     transition: background-color 0.1s;
+    overflow-x: hidden;
 }
 
 nav.scrolled {
@@ -99,6 +101,7 @@ nav ul li a:hover {
     padding: 8px;
     text-align: center;
     width: 70px;
+    overflow-x: hidden;
     
 }
 
@@ -179,27 +182,6 @@ main a {
     border: 1px solid var(--themeColor2);
 }
 
-#sec3 {
-    height: 20%;
-    text-align: center;
-    padding: 100px 20px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    display: none;
-}
-
-#sec3 a {
-    margin-top: 20px;
-    color: #ffff;
-    background-color: #FFD700;
-    padding: 5px;
-    text-align: center;
-    width: 15vw;
-    height: 5vh;  
-    display: block;
-}
-
 /* Section 4 styles */
 
 #sec4 {
@@ -221,6 +203,16 @@ main a {
     width: 20vw;
     align-self: center;
     margin-bottom: 30px;
+    overflow-x: hidden;
+}
+
+#sec4 .servicesList img {
+    transition: transform 0.3s ease-in-out;
+    }
+    
+    #sec4 .servicesList img:hover {
+        cursor: pointer;
+        transform: scale(1.05)
 }
 
 #sec4 .servicesList {
@@ -272,6 +264,12 @@ main a {
 
 .servicesList p {
     margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.servicesList p:hover {
+    color: rgb(153, 152, 152);
 }
 
 /* Section 5 styles */
@@ -282,6 +280,7 @@ main a {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    overflow: hidden;
 }
 
 #sec5 h2 {
@@ -295,6 +294,7 @@ main a {
     width: 30vw;
     align-self: center;
     margin-bottom: 30px;
+    overflow-x: hidden;
 }
 
 #sec5 .featuredLists {
@@ -374,6 +374,16 @@ main a {
 .featuredLists h3, .featuredLists p {
     margin-top: 20px;
     text-align: center;
+    cursor: pointer;
+}
+
+#sec5 .featuredLists div img {
+    transition: transform 0.3s ease-in-out;
+    }
+    
+#sec5 .featuredLists div img:hover {
+        cursor: pointer;
+        transform: scale(1.05)
 }
 
 .featuredLists div img {
@@ -384,10 +394,17 @@ main a {
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+    cursor: pointer;
   }
 
   .featuredLists p {
     word-wrap: break-word;
+
+  }
+
+  .featuredLists p:hover {
+    color: rgb(153, 152, 152);
+    
   }
 
   .featuredLists div {
@@ -406,7 +423,6 @@ main a {
     flex-direction: column;
     align-items: center;
     padding: 40px 0;
-    overflow: hidden;
   }
 
   #sec6 h2 {
@@ -455,7 +471,7 @@ main a {
     display: flex;
     justify-content: space-between;
     background-color: #ffff;
-    color:var(--themeColor2)
+    color:var(--themeColor2);
   }
 
 #sec7 .left {
@@ -488,12 +504,37 @@ main a {
     width: 57px;
     height: 60px;
     align-self: center;
+    background-color: #ffff;
+    border-radius: 50%;
+    padding: 5px;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
 }
+
+#sec7  .benefitsLists div img:hover {
+    animation: rotateImage 2s;
+}
+
+@keyframes rotateImage {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 #sec7  .benefitsLists div p {
     align-self: center;
     text-align: center;
+    cursor: pointer;
 }
+
+#sec7  .benefitsLists div p:hover {
+    color: rgb(190, 189, 189);
+}
+
+
 
 #sec7 .left a {
     margin-top: 40px;
@@ -518,6 +559,7 @@ footer {
     justify-content: flex-start;
     color: #ffff;
     align-items: center;
+    overflow: hidden;
     
 }
 
@@ -536,8 +578,13 @@ footer {
     margin-bottom: 20px;
 }
 
+.info p {
+    cursor: pointer;
+}
+
 .pages p, .about p{
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .about {
@@ -545,9 +592,91 @@ footer {
     margin-left: 50px;
 }
 
+.pages p:hover, .about p:hover {
+    color: rgb(153, 152, 152);
+}
+
 .info img {
     width: 180px;
     height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.info img:hover {
+    transform: scale(1.05)
+}
+
+/* Stes for toggle button */
+
+.toggle-btn {
+  margin-right: 80%;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 13px;
+  overflow: hidden;
+}
+
+aside {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: calc(100vh - 59px);
+  background-color: var(--themeColor2);
+  padding: 0 10px;
+  z-index: 100000;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+aside ul {
+  padding-top: 15px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+aside ul li {
+  line-height: 60px;
+  list-style: none;
+}
+
+aside ul li span {
+  opacity: 0;
+}
+
+aside ul li .log {
+    margin-top: 300px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+aside ul li .log:hover {
+    color: rgb(153, 152, 152); 
+    transform: scale(1.05);
+}
+   
+
+aside ul li a {
+  display: block;
+  height: 50px;
+  padding: 0 10px;
+  color: #ffff;
+  white-space: nowrap;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+aside ul li a:hover {
+  background-color: rgba(4, 117, 70, 0.3);
 }
 
 /* Styles for responsiveness */
@@ -639,6 +768,7 @@ footer {
         width: 100px;
         height: 100px;
       }
+
     
     
 }
@@ -673,11 +803,20 @@ footer {
         max-lines: 20px;
 
       }
+
+      #sec7 .left a {
+        width: 18vw;
+      }
     
     
 }
 
 @media (max-width: 850px) {
+
+    .aside {
+        font-size:x-small;
+    }
+
 
     .logoBtn {
         margin-left: 5%;
@@ -702,6 +841,302 @@ footer {
 
     #sec5 {
         padding: 30px 15px;
+    }
+
+    #sec7  .benefitsLists{
+        margin-left: 200px;
+        height: 100%;
+        width: 30vw;
+        margin-right: 5%;
+        background-color: var(--themeColor2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 30px;
+        justify-content: center;
+        align-content: center;
+        color: #ffff;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    nav ul, nav a {
+        display: none;
+    }
+
+    nav {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+    
+    #sec7  .benefitsLists div img{
+        margin-right: 10px;
+    }
+
+    #sec2  img{
+        width: 50vw;
+        margin-right: 120px;
+
+    }
+
+    #sec2 {
+        flex-wrap: wrap-reverse;
+        margin-top: 200px;
+        justify-content: center;
+
+    }
+
+    #sec2 div {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sec2 div h2{
+        text-align: center;
+        font-size: 1.8rem;
+
+    }
+}
+
+@media (max-width: 730px) {
+    #sec7 .left h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 715px) {
+     
+    #sec7 {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    #sec7 .benefitsLists {
+    height: 40vh;
+    margin-top: 20px;
+    width: 80vw;
+    margin-right: 180px;
+    align-self: center;
+    background-color: var(--themeColor2);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    row-gap: 20px;
+    grid-template-areas: 
+    "b1 b2"
+    "b3 b4";
+    }
+
+    .cropProd {
+        grid-area: b1;
+    }
+
+    .income {
+        grid-area: b2;
+    }
+
+    .fraud {
+        grid-area: b3;
+    }
+
+    .secure {
+        grid-area: b4;
+    }
+
+    #sec7 .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+
+    #sec7 .left h2{
+       align-self: center;
+       text-align: center;
+    }
+
+    footer .info {
+        margin-right: 20%;
+    }
+}
+
+@media (max-width: 680px) {
+    .Btn {
+        font-size: smaller;
+    }
+
+    #sec2 img {
+        width: 150vw;
+    }
+}
+
+@media (max-width: 625px) {
+
+    footer .info, .about, .pages {
+        margin: 0%;
+        padding: 0%;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        height: 120vh;
+        padding: 50px 20px;
+    }
+
+    footer .info, .pages, .about {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    footer .info {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 580px) {
+    .Btn {
+        width: 15vw;
+        font-size: xx-small;
+        padding: 8px;
+
+    }
+}
+
+@media (max-width: 525px) {
+    .Btn {
+        width: 15vw;
+        font-size: xx-small;
+        padding: 8px;
+
+    }
+
+    #sec4 .servicesList {
+
+        grid-template-areas: 
+        "img1"
+        "img2"
+        "img3"
+        "img4";
+    }
+
+    #sec5 .featuredLists {
+        align-self: center;
+        display: grid;
+        grid-template-columns: repeat(4, fr);
+        gap: 5px;
+        grid-template-areas: 
+        "img1"
+        "img2"
+        "img3"
+        "img4";
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    #sec5 .featuredLists div img {
+        margin-top: 10px;
+    }
+
+    #sec7 {
+        margin-top: 200px;
+    }
+
+    #sec7  .benefitsLists{
+       height: 60vh;
+    }
+
+    #sec7  .benefitsLists div {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #sec7  .benefitsLists div p{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #sec7  .benefitsLists {
+        row-gap: 10px;
+}
+
+}
+
+@media (max-width: 465px) {
+    .aside {
+        font-size: xx-small;
+    }
+
+    #sec6 .buttons {
+        flex-direction: column;
+      }
+
+      #sec6 .buttons .learn-More {
+        margin-top: 10px;
+      }
+
+      .Btn {
+        width: 18vw;
+      }
+
+      main h2, main p, #sec2 div h2{
+        word-wrap: break-word;
+        text-align: center;
+      }
+
+
+}
+
+@media (max-width: 380px) {
+    nav .logoBtn {
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+
+
+      .Btn {
+        display: block;
+        width: 22vw;
+      }
+
+      #sec2  img{
+        width: 80vw;
+    }
+
+    #sec1 {
+        height: 100vh;
+    }
+
+    #sec2 div a {
+        width:24vw;
     }
 
 }
